@@ -9,7 +9,10 @@ module.exports = function(){
     
     var citys = [];
     
+    var tasks = [];
+    
     texts.forEach(function(p,i){
+        tasks[i] = new Promise(function(resolve,reject){
             jsdom.env({
                 url:'http://m.dianping.com/citylist?c='+p+'&returl=&type=0&from=city_more',
                 src:[jquery],
@@ -23,16 +26,18 @@ module.exports = function(){
                             name:name
                         });
                     });
+                    resolve();
                 }
-            });
-        
-            setTimeout(function(){
-                citys.sort(function(a,b){
-                    return a.id - b.id;
-                });
-                fs.writeFile('./data/citys.json',JSON.stringify(citys),function(err,done){
-                    console.log(done);
-                });
-            },5000);
+            }); 
+        });
+    });
+    
+    Promise.all(tasks).then(function(){
+        citys.sort(function(a,b){
+            return a.id - b.id;
+        });
+        fs.writeFile('./data/citys.json',JSON.stringify(citys),function(err,done){
+            console.log('done.');
+        });
     });
 }()

@@ -1,6 +1,6 @@
 {
   "name": "delicious",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "输入坐标或位置信息，显示附近美食",
   "main": "index.js",
   "scripts": {
