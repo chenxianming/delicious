@@ -1,15 +1,16 @@
 var request = require('request');
 var jsdom = require('jsdom');
 var fs = require('fs');
-var jquery = fs.readFileSync("./utils/jquery.min.js", "utf-8");
 var querystring = require('querystring');
 var AsyncArr = require('async-arr');
-    
+
+var jquery = fs.readFileSync(__dirname+"/utils/jquery.min.js", "utf-8");
+
 const userAgent = {
     'user-agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1'
 };
 
-var citys = JSON.parse(fs.readFileSync('./data/citys.json','utf-8'));
+var citys = JSON.parse(fs.readFileSync(__dirname+'/data/citys.json','utf-8'));
 
 var c = {
     get:function(url,obj,cb){
