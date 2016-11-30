@@ -32,4 +32,7 @@
     });
     
     
+
+[![NPM](https://nodei.co/npm/delicious.png)](https://www.npmjs.com/package/delicious)
+
 todo
