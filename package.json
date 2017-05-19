@@ -1,6 +1,6 @@
 {
   "name": "delicious",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "输入坐标或位置信息，显示附近美食",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "async-arr": "^1.0.0",
+    "geo-dist-calc": "^1.1.0",
+    "geo-distance-js": "^1.0.0",
     "jsdom": "^9.8.3",
     "querystring": "^0.2.0",
     "request": "^2.78.0",
